@@ -18,8 +18,8 @@
 
 <body style="width: 100%;
 height: 100%;
-background: radial-gradient(rgb(133, 122, 143), rgb(0, 0, 0));
-color:rgb(90, 90, 90);
+background: radial-gradient(rgb(110, 102, 117), rgb(0, 0, 0));
+color:#fff;
 background-position:center">
     <div>
         <img src="img/tunisian.png" alt="tunisian flag" class="flag" style="height: 40px;
