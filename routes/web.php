@@ -36,7 +36,7 @@ Route::post('/signin', [
 ]);
 
 Route::get('/signup_page', [
-    'uses' => 'UserController@signupPage',
+    'uses' => 'userController@signupPage',
     'as' => 'signupPage',
 ]);
 
