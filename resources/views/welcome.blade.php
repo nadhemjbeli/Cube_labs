@@ -16,7 +16,11 @@
 
 
 
-<body style=" background-image: url('img/welcome.png');">
+<body style="width: 100%;
+height: 100%;
+background: radial-gradient(rgb(133, 122, 143), rgb(0, 0, 0));
+color:rgb(90, 90, 90);
+background-position:center">
     <div>
         <img src="img/tunisian.png" alt="tunisian flag" class="flag" style="height: 40px;
                                                                         margin-left: 80%;
@@ -25,8 +29,7 @@
     </div>
     <div class="text-center">
         <br><br>
-        <h1 style=""
-            class="font-weight-bold rounded-pill cube  ">
+        <h1 style="" class="font-weight-bold rounded-pill cube  ">
             Cube <span style="color: tomato">Lab</span></h1>
     </div>
     <div id="app" class="text-center" style="user-select:none;">
