@@ -59,10 +59,6 @@
             font-weight: 600;
             min-height: 48px;
         }
-
-        .nav {
-            width: auto
-        }
     </style>
 </head>
 
@@ -89,7 +85,7 @@ color: #666;">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
     </script> --}}
-    <script src="{{ URL::to('src/js/app.js') }}"></script>
+    {{-- <script src="{{ URL::to('src/js/app.js') }}"></script> --}}
 
 
 

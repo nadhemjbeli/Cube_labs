@@ -10,8 +10,8 @@ startup
     }
 </style>
 
-<form class="needs-validation" action="{{route("stored")}} " method="post" style="width: 100%;
-                                                        height: 100%;
+<form class="needs-validation form-control-sm" action="{{route("stored")}} " method="post" style="width:auto;
+                                                        height: auto;
                                                         background: radial-gradient(rgb(133, 122, 143), rgb(0, 0, 0));
                                                         color:#eee;
                                                         background-position:center" novalidate>
