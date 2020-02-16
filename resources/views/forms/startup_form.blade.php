@@ -123,7 +123,7 @@
         list-style: none;
     }
 
-    a {
+    .button {
         padding: 7px;
         text-decoration: none;
         display: inline-block;
@@ -131,72 +131,105 @@
         border-radius: 5px;
         color: #eee;
     }
+
+
+    button.button {
+        padding: 10px 10%;
+        text-align: center;
+        background-color: #723dbe;
+        cursor: pointer;
+    }
+
+    .error {
+        width: 50%;
+    }
+
+    textarea {
+        resize: none;
+    }
 </style>
+<link rel="stylesheet" href="{{ URL::to('src/css/main.css') }}">
+
+<br>
+<center>
+    @include('includes.message-block')
+</center>
 <br>
 <ul>
     <li>
-        <a href="#">return</a>
+        <a class="button" href="{{route('startup_space')}}">return</a>
     </li>
 </ul>
 <br>
-<fieldset>
-    <legend>personal inforamtion</legend>
-    <div class="form">
+<form action="{{route('postStartupForm')}} " method="POST">
+    @csrf
+    <fieldset>
+        <legend>personal inforamtion</legend>
+        <div class="form">
 
-        <input type="text" name="name" id="" autocomplete="off" required />
-        <label for="name" class="label-name">
-            <span class="content-name">Your name</span>
-        </label>
-    </div>
+            <input type="text" name="name" id="name" autocomplete="off" required />
+            <label for="name" class="label-name">
+                <span class="content-name">Your name</span>
+            </label>
+        </div>
+        <br>
+
+        <div class="form">
+            <input type="text" name="location_address" id="location_address" autocomplete="off" required />
+            <label for="location_address" class="label-name">
+                <span class="content-name">Your address</span>
+            </label>
+
+        </div>
+        <br>
+        <div class="form">
+            <input type="number" name="phone_number" id="phone_number" autocomplete="off" required />
+            <label for="phone_number" class="label-name">
+                <span class="content-name">your phone number</span>
+            </label>
+        </div>
+        <br />
+
+        <div class="form">
+            <input type="text" name="email" id="" autocomplete="off" required />
+            <label for="email" class="label-name">
+                <span class="content-name">Your email </span>
+            </label>
+        </div>
+        <br />
+
+        <div class="form">
+            <input type="text" name="members_number" id="" autocomplete="off" required />
+            <label for="members_number" class="label-name">
+                <span class="content-name">Your collegues number </span>
+            </label>
+        </div>
+        <br />
+
+        <br>
+
+    </fieldset>
     <br>
+    <fieldset>
+        <legend>startup idea</legend>
 
-    <div class="form">
-        <input type="text" name="name" id="" autocomplete="off" required />
-        <label for="name" class="label-name">
-            <span class="content-name">Your address</span>
-        </label>
-
-    </div>
+        <div class="form">
+            <input type="text" name="startup_idea" v-model="message" id="" autocomplete="off" required />
+            <label for="startup_idea" class="label-name">
+                <span class="content-name">what's the name of your startup</span>
+            </label>
+        </div>
+        <br>
+        <br>
+        please explain your startup idea (500 letters as minimum) <br>
+        <textarea name="startup_description" id="" cols="60" rows="10" placeholder="tell us everything here""></textarea>
+    </fieldset>
     <br>
-    <div class="form">
-        <input type="number" name="name" id="" autocomplete="off" required />
-        <label for="name" class="label-name">
-            <span class="content-name">your phone number</span>
-        </label>
-    </div>
-    <br />
-
-    <div class="form">
-        <input type="email" name="name" id="" autocomplete="off" required />
-        <label for="name" class="label-name">
-            <span class="content-name">Your email </span>
-        </label>
-    </div>
-    <br />
-    <div class="form">
-        <input type="number" name="name" v-model="message" id="" autocomplete="off" required max="6" />
-        <label for="name" class="label-name">
-            <span class="content-name">The number of your collegues (max 6)</span>
-        </label>
-    </div>
-    <br>
-
-</fieldset>
-<br>
-<fieldset>
-    <legend>startup idea</legend>
-
-    <div class="form">
-        <input type="text" name="name" v-model="message" id="" autocomplete="off" required />
-        <label for="name" class="label-name">
-            <span class="content-name">what's the name of your startup</span>
-        </label>
-    </div>
-    <br>
-    <br>
-    please explain your startup idea <br>
-    <textarea name="" id="" cols="60" rows="10" placeholder="tell us everything here""></textarea>
-</fieldset>
+    <center>
+        <button type=" submit" class="button">send</button>
+    </center>
+    
+</form>
 <br />
 
 

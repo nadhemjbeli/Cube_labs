@@ -30,6 +30,11 @@ Route::get('/rejected', 'StartupController@getrejected')->name('rejected');
 Route::get('/properties', 'StartupController@getproperties')->name('properties');
 
 // Route::get('/', 'userController@getHome')->name('home');
+Route::post('/post_startup_form', [
+    'uses' => 'StartupController@postStartupForm',
+    'as' => 'postStartupForm',
+]);
+
 Route::post('/signin', [
     'uses' => 'userController@postSignIn',
     'as' => 'signin',
@@ -49,6 +54,8 @@ Route::post('/stored', [
     'uses' => 'StartupController@stored',
     'as' => 'stored',
 ]);
+
+// Auth::routhes(['verify' => true]);
 
 Route::get('/dashboard', [
     'uses' => 'userController@getDashboard',

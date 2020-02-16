@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->integer('startup_id')->unsigned();
+            $table->foreign('startup_id')->references('id')->on('startups');
         });
     }
 

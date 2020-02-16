@@ -21,7 +21,7 @@ class CreateStartupsTable extends Migration
             $table->string('location_address');
             $table->string('startup_idea');
             $table->text('startup_description');
-            $table->integer('members_number');
+            $table->string('members_number');
 
             $table->timestamps();
         });

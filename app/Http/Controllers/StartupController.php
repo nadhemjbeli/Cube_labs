@@ -61,6 +61,40 @@ class StartupController extends Controller
 
     }
 
+    public function postStartupForm(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:30',
+            'email' => 'email|unique:users',
+            'phone_number' => 'required|min:8',
+            'location_address' => 'required',
+            'startup_idea' => 'required',
+            'startup_description' => 'required|min:500',
+            'members_number' => '',
+
+        ]);
+
+        $name = $request['name'];
+        $email = $request['email'];
+        $phone_number = $request['phone_number'];
+        $location_address = $request['location_address'];
+        $startup_idea = $request['startup_idea'];
+        $startup_description = $request['startup_description'];
+        $members_number = $request['members_number'];
+
+        $startup = new Startup();
+        $startup->name = $name;
+        $startup->email = $email;
+        $startup->phone_number = $phone_number;
+        $startup->location_address = $location_address;
+        $startup->startup_idea = $startup_idea;
+        $startup->startup_description = $startup_description;
+        $startup->members_number = (int) $members_number;
+        $startup->save();
+        // Auth::login($user);
+        return redirect()->route('signupPage');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
