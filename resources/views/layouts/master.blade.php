@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <style>
+        body {
+            width: auto;
+        }
+
         .login-form .form-control {
             font-size: 15px;
             min-height: 48px;
@@ -54,6 +58,10 @@
             font-size: 15px;
             font-weight: 600;
             min-height: 48px;
+        }
+
+        .nav {
+            width: auto
         }
     </style>
 </head>
