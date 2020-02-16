@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="margin-bottom: 0" id="app1">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark " style="margin-bottom: 0" id="app1">
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand active table-bordered rounded-pill {{ Request::segment(1) === '' ? 'active' : null }}"
