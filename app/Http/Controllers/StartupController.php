@@ -114,15 +114,15 @@ class StartupController extends Controller
     public function stored(Request $request)
     {
         $this->validate($request, [
-            'already' => 'required|in : 1,0',
-            'scalable' => 'required|in : 1,0',
-            'innovative' => 'required|in : 1,0',
+            'already' => 'required|in : "yes","no"',
+            'scalable' => 'required|in : "yes","no"',
+            'innovative' => 'required_if:already,"no"|in : "yes","no"',
         ]);
         $already = $request['already'];
         $scalable = $request['scalable'];
         $rich = $request['rich'];
         $innovative = $request['innovative'];
-        if (($already == 1 || $innovative == 1) && $scalable == 1) {
+        if (($already == "yes" || $innovative == "yes") && $scalable == "yes") {
             return redirect()->route('accepted');
         } else {
             return redirect()->route('rejected');

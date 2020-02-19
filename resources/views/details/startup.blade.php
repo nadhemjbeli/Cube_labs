@@ -26,18 +26,27 @@ startup
         <p>
             <span class="num-question">Q. 1</span> Is your society already created?
         </p>
-        <div class=" btn-group-toggle " data-toggle="buttons">
+        <div class=" btn-group-toggle custom-control custom-radio " data-toggle="buttons">
             <label class="btn btn-secondary">
-                <input type="radio" name="already" id="option1" class="custom-control-input" value="1" required> Yes
+                <input type="radio" name="already" id="option1" class="custom-control-input" value="yes" required> Yes
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="already" id="option2" class="radio" value="0" required> No
+                <input type="radio" name="already" id="option2" class="radio" value="no" required> No
             </label>
-        </div><br>
+        </div>
+        <br>
+        @if ($errors->has('already'))
+
+
+        <div class="error">
+            {{$errors->first('already')}}
+        </div>
+        @endif
+        <br>
         <hr><br>
         <div>
 
-            <p>
+            <p><span class="num-question">Q. 2 </span>
                 Does your company meet ALL of these criteria?<br>
                 - Your company has less than 3 years of existence <br>
                 - You have less than 15 employees <br>
@@ -51,13 +60,11 @@ startup
                 <label class="btn btn-secondary">
                     <input type="radio" name="rich" value="no" id="option4"> No
                 </label>
-                <div class="invalid-tooltip">
-                    Please select a valid state.
-                </div>
             </div>
-        </div><br>
-        <hr><br>
-        <div>
+            <br>
+            <hr>
+        </div>
+        <div><br>
             <p>
                 An innovative idea is an interesting and differentiated<br>
                 solution to a given problem. The innovation can<br>
@@ -65,43 +72,45 @@ startup
                 the market ... Example of innovative project: Your imagination is the limit <br>
                 Example of NON-innovative project: a publinet, a ss2i ..
             </p>
+            <br>
+            <hr>
         </div>
-        <br>
-        <hr><br>
         <div>
+            <br>
             <p>
-                Is your company or idea innovative?
+                <span class="num-question">Q. 3 </span>Is your company or idea innovative?
             </p>
             <div class=" btn-group-toggle custom-control custom-radio" data-toggle="buttons">
                 <label class="btn btn-secondary">
-                    <input type="radio" name="innovative" value="1" class="radio" required> Yes
+                    <input type="radio" name="innovative" value="yes" class="radio" required> Yes
                 </label>
                 <label class="btn btn-secondary">
-                    <input type="radio" name="innovative" value="0" class="radio" required> No
+                    <input type="radio" name="innovative" value="no" class="radio" required> No
                 </label>
             </div>
+            <br>
+            <hr>
         </div>
-        <br>
-        <hr><br>
         <div class="">
+            <br>
             <p style="margin-left: 15px">
                 A project is scalable if it has strong growth potential: <br>
                 It can multiply its customers and revenues quickly and exponentially. <br>
                 Example of scalable project: Uber for pizzas <br>
                 Example of NON-scalable project: Freelance
-            </p>
-        </div><br>
-        <hr><br>
-        <div>
+            </p><br>
+            <hr>
+        </div>
+        <div><br>
             <p>
-                Is your company or idea scalable?
+                <span class="num-question">Q. 4 </span>Is your company or idea scalable?
             </p>
             <div class="btn-group-toggle custom-control custom-radio" data-toggle="buttons">
                 <label class="btn btn-secondary">
-                    <input type="radio" name="scalable" id="option1" value="1" class="radio" required> Yes
+                    <input type="radio" name="scalable" id="option1" value="yes" class="radio" required> Yes
                 </label>
                 <label class="btn btn-secondary">
-                    <input type="radio" name="scalable" id="option2" value="0" class="radio" required> No
+                    <input type="radio" name="scalable" id="option2" value="no" class="radio" required> No
                 </label>
             </div>
         </div>

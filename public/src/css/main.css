@@ -38,6 +38,12 @@ hr.egible {
 .apply {
     border: transparent;
     background-color: #dc3545;
+
+    border-radius: 5px;
+}
+.app {
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 5px;
 }
 .startup_back {
