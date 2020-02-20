@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Startup extends Model
 {
-    public function users()
+    public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo('App\User');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStartupsTable extends Migration
+class CreateBusinesses extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateStartupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('startups', function (Blueprint $table) {
+        Schema::create('businesses', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
             $table->string('phone_number');
+            $table->string('business_location_address');
             $table->string('members_number');
-            $table->string('location_address');
-            $table->string('startup_idea');
-            $table->text('startup_description');
-            $table->text('startup_problem');
+            $table->date('date_of_business');
+            $table->string('business_name');
+            $table->text('business_description');
+            $table->text('business_problem');
+            $table->text('business_sector');
 
             $table->timestamps();
             $table->integer('user_id');
@@ -36,6 +36,6 @@ class CreateStartupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('startups');
+        Schema::dropIfExists('businesses');
     }
 }

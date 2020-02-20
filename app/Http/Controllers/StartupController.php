@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Startup;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class StartupController extends Controller
 {
@@ -29,7 +32,12 @@ class StartupController extends Controller
 
     public function getStartupForm()
     {
-        return view('forms/startup_form');
+        return view('forms/startup_form', ['user' => Auth::user()]);
+    }
+
+    public function getStartupType()
+    {
+        return view('includes/startup_type');
     }
 
     public function getStartupSpace()
@@ -70,7 +78,6 @@ class StartupController extends Controller
             'location_address' => 'required',
             'startup_idea' => 'required',
             'startup_description' => 'required|min:500',
-            'members_number' => '',
 
         ]);
 
@@ -90,9 +97,11 @@ class StartupController extends Controller
         $startup->startup_idea = $startup_idea;
         $startup->startup_description = $startup_description;
         $startup->members_number = (int) $members_number;
-        $startup->save();
-        // Auth::login($user);
-        return redirect()->route('signupPage');
+        $message = 'There was an error';
+        if ($request->user()->startup()->save($startup)) {
+            $message = 'Post successfully created!';
+        }
+        return redirect()->route('dashboard')->with(['message' => $message]);
     }
 
     /**

@@ -19,7 +19,9 @@ Route::get('/sign_in_page', 'userController@getSignin')->name('signinPage');
 //turn to startup details
 Route::get('/startup_explanation', 'StartupController@index')->name('startup_explanation');
 
-Route::get('/startup_form', 'StartupController@getStartupForm')->name('startupForm');
+Route::get('/startup_form', 'StartupController@getStartupForm')->name('startupForm')->middleware('auth');
+
+Route::get('/startup_type', 'StartupController@getStartupType')->name('startup_type')->middleware('auth');
 
 Route::get('/startup_space', 'StartupController@getStartupSpace')->name('startup_space');
 
@@ -33,7 +35,7 @@ Route::get('/properties', 'StartupController@getproperties')->name('properties')
 Route::post('/post_startup_form', [
     'uses' => 'StartupController@postStartupForm',
     'as' => 'postStartupForm',
-]);
+])->middleware('auth');
 
 Route::post('/signin', [
     'uses' => 'userController@postSignIn',

@@ -63,12 +63,11 @@
     </style>
 </head>
 
-<body style="
-width: auto;
-font-family: Poppins, sans-serif;
-font-size: 16px;
-background: #eee;
-color: #666;">
+<body style="width: auto;
+            font-family: Poppins, sans-serif;
+            font-size: 16px;
+            background: #eee;
+            color: #666;">
 
 
     @include('includes.header')

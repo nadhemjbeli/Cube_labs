@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{ URL::to('src/css/main.css') }}">
-    <title>startup form</title>
+    <title>Business form</title>
     <style>
         .error {
             width: 50%;
@@ -50,15 +50,16 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="location_address">In which region are you established?</label>
+
+                <label for="business_location_address">Your business location</label>
                 <input
-                    class="form-control rounded-pill form-control-lg {{ $errors->has('location_address') ? ' is-invalid' : '' }}"
-                    type="text" name="location_address" id="location_address"
-                    value="{{ Request::old('location_address') }}">
-                @if ($errors->has('location_address'))
+                    class="form-control rounded-pill form-control-lg {{ $errors->has('business_location_address') ? ' is-invalid' : '' }}"
+                    type="text" name="business_location_address" id="business_location_address"
+                    value="{{ Request::old('business_location_address') }}">
+                @if ($errors->has('business_location_address'))
                 <br>
                 <div class="error">
-                    {{$errors->first('location_address')}}
+                    {{$errors->first('business_location_address')}}
                 </div>
                 @endif
             </div>
@@ -73,29 +74,59 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="startup_idea">What's the name of your startup</label>
+                <label for="business_name">Project / company name</label>
                 <input
-                    class="form-control rounded-pill form-control-lg {{ $errors->has('startup_idea') ? ' is-invalid' : '' }}"
-                    type="text" name="startup_idea" id="startup_idea" value="{{ Request::old('startup_idea') }}">
-                @if ($errors->has('startup_idea'))
+                    class="form-control rounded-pill form-control-lg {{ $errors->has('business_name') ? ' is-invalid' : '' }}"
+                    type="text" name="business_name" id="business_name" value="{{ Request::old('business_name') }}">
+                @if ($errors->has('business_name'))
                 <br>
                 <div class="error">
-                    {{$errors->first('startup_idea')}}
+                    {{$errors->first('business_name')}}
+                </div>
+                @endif
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="date_of_business">What's the name of your startup</label>
+                <input
+                    class="form-control rounded-pill form-control-lg {{ $errors->has('date_of_business') ? ' is-invalid' : '' }}"
+                    type="date" name="date_of_business" id="date_of_business"
+                    value="{{ Request::old('date_of_business') }}">
+                @if ($errors->has('date_of_business'))
+                <br>
+                <div class="error">
+                    {{$errors->first('date_of_business')}}
+                </div>
+                @endif
+            </div>
+            <br>
+            <div class="form-group">
+                <br>
+
+                In which sector of activity do you categorize your project? <br>
+                <select name="business_sector" id=""
+                    class="form-control {{ $errors->has('business_sector') ? ' is-invalid' : '' }}">
+                </select>
+                @if ($errors->has('business_sector'))
+                <br>
+                <div class=" error">
+                    {{$errors->first('business_sector')}}
                 </div>
                 @endif
             </div>
             <div class="form-group">
                 <br>
                 please explain your startup idea (500 letters as minimum) <br>
-                <textarea name="startup_description" id="" cols="60" rows="5" placeholder="tell us everything here"
-                    class="form-control {{ $errors->has('startup_description') ? ' is-invalid' : '' }}"></textarea>
-                @if ($errors->has('startup_description'))
+                <textarea name="business_description" id="" cols="60" rows="10" placeholder="tell us everything here"
+                    class="form-control {{ $errors->has('business_description') ? ' is-invalid' : '' }}"></textarea>
+                @if ($errors->has('business_description'))
                 <br>
                 <div class=" error">
-                    {{$errors->first('startup_description')}}
+                    {{$errors->first('business_description')}}
                 </div>
                 @endif
             </div>
+
             <br>
             <div class="form-group">
                 <br>
@@ -109,7 +140,7 @@
                 </div>
                 @endif
             </div>
-            <br>
+
             <div class="login-form">
                 <center>
                     <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"

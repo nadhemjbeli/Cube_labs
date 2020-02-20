@@ -15,7 +15,8 @@ class CreateFieldsTable extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('field_name');
+            $table->string('business_sector');
+            $table->string('startup_sector');
             $table->timestamps();
         });
     }

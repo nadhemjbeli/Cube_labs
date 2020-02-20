@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-spage
+startup space
 @endsection
 
 @section('content')
@@ -31,7 +31,7 @@ spage
                 <div class="font-weight-bold text-uppercase block-startup-title ">
                     get connected
                 </div>
-                <p>Access your Startup Space</p><br>
+                <p>you have an account already ?<br>Access to your Startup Space here</p>
                 <a href="{{route("signinPage")}} " class="block-startup-btn font-weight-bold text-decoration-none">Sign
                     in</a>
             </div>

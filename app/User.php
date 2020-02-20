@@ -7,9 +7,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 class User extends Authenticatable
 {
     use \Illuminate\Auth\Authenticatable;
-    public function startups()
+    public function startup()
     {
-        return $this->belongsTo(Startup::class);
+        return $this->hasOne(Startup::class);
+    }
+    public function business()
+    {
+        return $this->hasOne(Business::class);
     }
     // use Notifiable;
 

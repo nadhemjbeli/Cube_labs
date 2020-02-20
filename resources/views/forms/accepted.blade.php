@@ -11,7 +11,7 @@ accepted
         the following
         link:</h4>
     <div class="text-center login-form">
-        <a href="{{route('startupForm')}}" class="getStarted">get started</a>
+        <a href="{{route('signupPage')}}" class="getStarted">get started</a>
         <a href="{{route('startup_space')}}" class="getStarted">return to website</a>
 
 

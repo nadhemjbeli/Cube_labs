@@ -123,6 +123,8 @@ startup
             <button class="btn btn-success login-form" style="margin-bottom: 30px" type="submit">continue</button>
         </center><br>
         <a class="btn btn-outline-warning" href="{{route('startupForm')}} ">head to startup Form</a>
+        <br>
+        <a class="btn btn-outline-warning" href="{{route('signupPage') }}">head to sign up</a>
     </div>
 </form>
 

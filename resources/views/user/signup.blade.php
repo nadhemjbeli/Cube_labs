@@ -16,7 +16,7 @@ login
             <input class="form-control rounded-pill form-control-lg {{ $errors->has('email') ? ' is-invalid' : '' }}"
                 type="text" name="email" id="email" value="{{ Request::old('email') }}">
         </div>
-        <div class="form-group >
+        <div class="form-group">
             <label for=" first_name">Your Firstname</label>
             <input
                 class="form-control rounded-pill form-control-lg {{ $errors->has('first_name') ? ' is-invalid' : '' }}"" type="
