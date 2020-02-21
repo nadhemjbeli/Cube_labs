@@ -35,7 +35,7 @@ padding-bottom: 10px;" id="app1">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-                    <a class="dropdown-item" href="#">{{$user->first_name}} </a>
+                    <a class="dropdown-item" href="">{{$user->first_name}} </a>
 
                     <a class="dropdown-item text-uppercase" href="{{route("logout")}} ">logout</a>
 
