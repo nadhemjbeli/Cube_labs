@@ -145,7 +145,7 @@
                 <center>
                     <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="width: 50%">send</button>
-                    <a href="#">Back to choose the type</a>
+                    <a href="{{route('startup_type')}} ">Back to choose the type</a>
                     <a href="{{route('dashboard')}} "
                         class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="color: blanchedalmond">send</a>

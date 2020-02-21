@@ -14,7 +14,7 @@ class userController extends Controller
     }
     public function getDashboard()
     {
-        return view('user/dashboard');
+        return view('user/dashboard', ['user' => Auth::user()]);
     }
     public function getHome()
     {
@@ -23,6 +23,11 @@ class userController extends Controller
     public function signupPage()
     {
         return view('user/signup');
+    }
+    public function getLogout()
+    {
+        Auth::logout();
+        return redirect()->route('startup_space');
     }
 
     public function postSignUp(Request $request)

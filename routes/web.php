@@ -21,6 +21,8 @@ Route::get('/startup_explanation', 'StartupController@index')->name('startup_exp
 
 Route::get('/startup_form', 'StartupController@getStartupForm')->name('startupForm')->middleware('auth');
 
+Route::get('/business_form', 'BusinessController@getBusinessForm')->name('businessForm')->middleware('auth');
+
 Route::get('/startup_type', 'StartupController@getStartupType')->name('startup_type')->middleware('auth');
 
 Route::get('/startup_space', 'StartupController@getStartupSpace')->name('startup_space');
@@ -32,6 +34,12 @@ Route::get('/rejected', 'StartupController@getrejected')->name('rejected');
 Route::get('/properties', 'StartupController@getproperties')->name('properties');
 
 // Route::get('/', 'userController@getHome')->name('home');
+
+Route::get('/logout', [
+    'uses' => 'userController@getLogout',
+    'as' => 'logout',
+]);
+
 Route::post('/post_startup_form', [
     'uses' => 'StartupController@postStartupForm',
     'as' => 'postStartupForm',

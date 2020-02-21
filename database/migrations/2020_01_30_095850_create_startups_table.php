@@ -15,8 +15,6 @@ class CreateStartupsTable extends Migration
     {
         Schema::create('startups', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('email');
             $table->string('phone_number');
             $table->string('members_number');
             $table->string('location_address');

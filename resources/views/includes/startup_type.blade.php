@@ -53,7 +53,7 @@
 
                     <p>are you struggling with an already<br> made business ?<br>
                         do you want your business to get<br> improved with the help of professionals?</p>
-                    <a href="{{route("signinPage")}} "
+                    <a href="{{route("businessForm")}} "
                         class="block-startup-btn font-weight-bold text-decoration-none">Get
                         Started</a>
                 </div>

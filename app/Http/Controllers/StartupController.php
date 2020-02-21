@@ -72,31 +72,29 @@ class StartupController extends Controller
     public function postStartupForm(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:30',
-            'email' => 'email|unique:users',
             'phone_number' => 'required|min:8',
             'location_address' => 'required',
             'startup_idea' => 'required',
-            'startup_description' => 'required|min:500',
+            'startup_description' => 'required|max:500',
+            'startup_problem' => 'required|max:500',
 
         ]);
 
-        $name = $request['name'];
-        $email = $request['email'];
         $phone_number = $request['phone_number'];
         $location_address = $request['location_address'];
         $startup_idea = $request['startup_idea'];
-        $startup_description = $request['startup_description'];
         $members_number = $request['members_number'];
+        $startup_description = $request['startup_description'];
+        $startup_problem = $request['startup_problem'];
 
         $startup = new Startup();
-        $startup->name = $name;
-        $startup->email = $email;
+
         $startup->phone_number = $phone_number;
+        $startup->members_number = (int) $members_number;
         $startup->location_address = $location_address;
         $startup->startup_idea = $startup_idea;
         $startup->startup_description = $startup_description;
-        $startup->members_number = (int) $members_number;
+        $startup->startup_problem = $startup_problem;
         $message = 'There was an error';
         if ($request->user()->startup()->save($startup)) {
             $message = 'Post successfully created!';

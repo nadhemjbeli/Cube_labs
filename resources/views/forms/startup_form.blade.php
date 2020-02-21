@@ -23,6 +23,7 @@
 </head>
 
 <body>
+    @include('includes.message-block')
     <div class="container block-startup"></div>
     <div class="container">
         <p>your name:</p>
@@ -86,7 +87,7 @@
             </div>
             <div class="form-group">
                 <br>
-                please explain your startup idea (500 letters as minimum) <br>
+                please explain your startup idea (500 letters as maximum) <br>
                 <textarea name="startup_description" id="" cols="60" rows="5" placeholder="tell us everything here"
                     class="form-control {{ $errors->has('startup_description') ? ' is-invalid' : '' }}"></textarea>
                 @if ($errors->has('startup_description'))
@@ -99,7 +100,7 @@
             <br>
             <div class="form-group">
                 <br>
-                describe the problem you are addressing (500 letters as minimum) <br>
+                describe the problem you are addressing (500 letters as maximum) <br>
                 <textarea name="startup_problem" id="" cols="60" rows="5" placeholder="tell us everything here"
                     class="form-control {{ $errors->has('startup_problem') ? ' is-invalid' : '' }}"></textarea>
                 @if ($errors->has('startup_problem'))
@@ -114,7 +115,7 @@
                 <center>
                     <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="width: 50%">send</button>
-                    <a href="#">Back to choose the type</a>
+                    <a href="{{route('startup_type')}}">Back to choose the type</a>
                     <a href="{{route('dashboard')}} "
                         class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="color: blanchedalmond">send</a>
