@@ -21,11 +21,22 @@ height: 100%;
 background: radial-gradient(rgb(110, 102, 117), rgb(0, 0, 0));
 color:#fff;
 background-position:center">
-    <div>
-        <img src="img/tunisian.png" alt="tunisian flag" class="flag" style="height: 40px;
-                                                                        margin-left: 80%;
+    <div style="overflow: hidden; justify-content:space-around;">
+        <img src="img/cube_lab.png" alt="cube lab logo" class="logo" style="height: 40px;
+                                                                        margin-left: 65%;
+                                                                        margin-right: 3%;
                                                                         margin-top: 5%;
                                                                         user-select: none">
+
+        <img src="img/cube_it.png" alt="tunisian flag" class="flag" style="height: 40px;
+                                                                        margin-right: 3%;
+                                                                        
+                                                                        margin-top: 5%;
+                                                                        user-select: none">
+        <img src="img/tunisian.png" alt="tunisian flag" class="flag" style="height: 40px;
+                                                                            display: inline;
+                                                                            margin-top: 5%;"
+                                                                            >
     </div>
     <div class="text-center">
         <br><br>

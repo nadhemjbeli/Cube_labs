@@ -45,6 +45,11 @@ Route::post('/post_startup_form', [
     'as' => 'postStartupForm',
 ])->middleware('auth');
 
+Route::post('/post_business_form', [
+    'uses' => 'BusinessController@postBusinessForm',
+    'as' => 'postBusinessForm',
+])->middleware('auth');
+
 Route::post('/signin', [
     'uses' => 'userController@postSignIn',
     'as' => 'signin',

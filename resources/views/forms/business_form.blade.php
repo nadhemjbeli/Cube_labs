@@ -33,7 +33,7 @@
 
     </div>
     <br>
-    <form action="{{route('postStartupForm')}} " method="POST">
+    <form action="{{route('postBusinessForm')}} " method="POST">
         @csrf
         <div class="container">
             <div class="form-group">
@@ -87,7 +87,7 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="date_of_business">What's the name of your startup</label>
+                <label for="date_of_business">What's the name of your business</label>
                 <input
                     class="form-control rounded-pill form-control-lg {{ $errors->has('date_of_business') ? ' is-invalid' : '' }}"
                     type="date" name="date_of_business" id="date_of_business"
@@ -116,7 +116,7 @@
             </div>
             <div class="form-group">
                 <br>
-                please explain your startup idea (500 letters as minimum) <br>
+                please explain your business idea (500 letters as minimum) <br>
                 <textarea name="business_description" id="" cols="60" rows="10" placeholder="tell us everything here"
                     class="form-control {{ $errors->has('business_description') ? ' is-invalid' : '' }}"></textarea>
                 @if ($errors->has('business_description'))
@@ -131,12 +131,12 @@
             <div class="form-group">
                 <br>
                 describe the problem you are addressing (500 letters as minimum) <br>
-                <textarea name="startup_problem" id="" cols="60" rows="5" placeholder="tell us everything here"
-                    class="form-control {{ $errors->has('startup_problem') ? ' is-invalid' : '' }}"></textarea>
-                @if ($errors->has('startup_problem'))
+                <textarea name="business_problem" id="" cols="60" rows="5" placeholder="tell us everything here"
+                    class="form-control {{ $errors->has('business_problem') ? ' is-invalid' : '' }}"></textarea>
+                @if ($errors->has('business_problem'))
                 <br>
                 <div class=" error">
-                    {{$errors->first('startup_problem')}}
+                    {{$errors->first('business_problem')}}
                 </div>
                 @endif
             </div>
@@ -145,7 +145,7 @@
                 <center>
                     <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="width: 50%">send</button>
-                    <a href="{{route('startup_type')}} ">Back to choose the type</a>
+                    {{-- <a href="{{route('business_type')}} ">Back to choose the type</a> --}}
                     <a href="{{route('dashboard')}} "
                         class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase"
                         style="color: blanchedalmond">send</a>

@@ -25,7 +25,7 @@ class BusinessController extends Controller
         return view('forms/business_form', ['user' => Auth::user()]);
     }
 
-    public function postStartupForm(Request $request)
+    public function postBusinessForm(Request $request)
     {
         $this->validate($request, [
 
@@ -33,8 +33,8 @@ class BusinessController extends Controller
             'business_location_address' => 'required',
             'date_of_business' => 'required',
             'business_name' => 'required',
-            'business_description' => 'required|min:500',
-            'business_problem' => 'required|min:500',
+            'business_description' => 'required|max:500',
+            'business_problem' => 'required|max:500',
 
         ]);
 
@@ -43,7 +43,7 @@ class BusinessController extends Controller
         $members_number = $request['members_number'];
         $date_of_business = $request['date_of_business'];
         $business_name = $request['business_name'];
-        $startup_description = $request['startup_description'];
+        $business_description = $request['business_description'];
         $business_problem = $request['business_problem'];
 
         $business = new Business();

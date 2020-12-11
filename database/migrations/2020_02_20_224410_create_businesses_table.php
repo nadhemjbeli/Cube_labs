@@ -22,7 +22,7 @@ class CreateBusinessesTable extends Migration
             $table->string('business_name');
             $table->text('business_description');
             $table->text('business_problem');
-            $table->text('business_sector');
+            // $table->text('business_sector');
 
             $table->timestamps();
             $table->integer('user_id');

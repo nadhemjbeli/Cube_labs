@@ -6,12 +6,11 @@ dashboard
 
 @section('content_auth')
 <div class="container">
-    <p>
-        name
-    </p>
-    <h3>
-        {{$user->first_name}}
-    </h3>
+    <br>
+    <h4 class="user_info">
+        hello Mr/Mrs {{$user->first_name}}
+    </h4>
+    
     @if($user->startup)
     <div>
         <p>
@@ -23,11 +22,13 @@ dashboard
     </div>
     @else
     <div>
-        <p>
-            password
-        </p>
+        <br>
+        <div class="article" style="margin-left: 20px">
+            <h4>We will view your business informations and issues</h4>
+            <h4>don't forget to check your email</h4>
+        </div>
         <h3>
-            {{$user->email}}
+            your business: <strong>{{$user->business->business_name}}</strong>
         </h3>
     </div>
     @endif
