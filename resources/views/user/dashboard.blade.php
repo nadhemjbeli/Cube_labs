@@ -21,16 +21,16 @@ dashboard
         </h3>
     </div>
     @else
-    <div>
-        <br>
-        <div class="article" style="margin-left: 20px">
-            <h4>We will view your business informations and issues</h4>
-            <h4>don't forget to check your email</h4>
+        <div>
+            <br>
+            <div class="article" style="margin-left: 20px">
+                <h4>We will view your business informations and issues</h4>
+                <h4>don't forget to check your email</h4>
+            </div>
+            <h3>
+                your business: <strong>{{$user->business->business_name}}</strong>
+            </h3>
         </div>
-        <h3>
-            your business: <strong>{{$user->business->business_name}}</strong>
-        </h3>
-    </div>
     @endif
 </div>
 @endsection
