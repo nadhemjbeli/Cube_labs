@@ -17,8 +17,8 @@ padding-bottom: 10px;" id="app1">
 
             <li class="{{ Request::segment(1) === 'sign_in_page' ? 'active' : null }}"><a
                     class="nav-link text-uppercase" href="{{route('signinPage') }}">sign in</a></li>
-            <li class="{{ Request::segment(1) === 'signupPage' ? 'active' : null }}"><a class="nav-link text-uppercase"
-                    href="{{route('signupPage') }}">sign up</a></li>
+{{--            <li class="{{ Request::segment(1) === 'signupPage' ? 'active' : null }}"><a class="nav-link text-uppercase"--}}
+{{--                    href="{{route('signupPage') }}">sign up</a></li>--}}
             <li class="{{ Request::segment(1) === 'startup_space' ? 'active' : null }}"><a
                     class="nav-link text-uppercase" href="{{route('startup_space') }}">startup space</a></li>
             <li class="{{ Request::segment(1) === 'properties' ? 'active' : null }}"><a class="nav-link text-uppercase"

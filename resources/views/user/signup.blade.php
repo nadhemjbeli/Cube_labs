@@ -25,7 +25,10 @@ login
         <div class="form-group ">
             <label for=" password" class="form-control-label">Your Password</label>
             <input class="form-control rounded-pill form-control-lg {{ $errors->has('password') ? ' is-invalid' : '' }}"
-                type="password" name="password" id="password"><br><br>
+                type="password" name="password" id="password">
+            <label for=" password" class="form-control-label">Confirm Your Password</label>
+            <input class="form-control rounded-pill form-control-lg {{ $errors->has('password') ? ' is-invalid' : '' }}"
+                   type="password" name="password_confirmation"><br><br>
             @include('includes.message-block')
         </div>
         <button type="submit" class="btn mt-5 rounded-pill btn-lg btn-custom btn-block text-uppercase">Submit</button>

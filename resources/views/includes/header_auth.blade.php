@@ -13,12 +13,12 @@ padding-bottom: 10px;" id="app1">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <!-- Left Side Of Navbar -->
         <ul class="navbar-nav mr-auto">
-            <li class="{{ Request::segment(1) === 'startup_space' ? 'active' : null }}"><a
-                    class="nav-link text-uppercase" href="{{route('startup_space') }}">startup space</a></li>
-            <li class="{{ Request::segment(1) === 'startupForm' ? 'active' : null }}"><a class="nav-link text-uppercase"
-                    href="{{route('startupForm') }}">startup form</a></li>
-            <li class="{{ Request::segment(1) === 'businessForm' ? 'active' : null }}">
-                <a class="nav-link text-uppercase" href="{{route('businessForm') }}">business form</a>
+{{--            <li class="{{ Request::segment(1) === 'startup_space' ? 'active' : null }}"><a--}}
+{{--                    class="nav-link text-uppercase" href="{{route('startup_space') }}">startup space</a></li>--}}
+{{--            <li class="{{ Request::segment(1) === 'startupForm' ? 'active' : null }}"><a class="nav-link text-uppercase"--}}
+{{--                    href="{{route('startupForm') }}">startup form</a></li>--}}
+{{--            <li class="{{ Request::segment(1) === 'businessForm' ? 'active' : null }}">--}}
+{{--                <a class="nav-link text-uppercase" href="{{route('businessForm') }}">business form</a>--}}
             </li>
         </ul>
         <ul class=" navbar-nav ml-auto">

@@ -35,13 +35,13 @@ startup
             </label>
         </div>
         <br>
-        @if ($errors->has('already'))
+{{--        @if ($errors->has('already'))--}}
 
 
-        <div class="error">
-            {{$errors->first('already')}}
-        </div>
-        @endif
+{{--        <div class="error">--}}
+{{--            {{$errors->first('already')}}--}}
+{{--        </div>--}}
+{{--        @endif--}}
         <br>
         <hr><br>
         <div>
@@ -55,10 +55,10 @@ startup
             </p>
             <div class="btn-group-toggle custom-control custom-radio" data-toggle="buttons">
                 <label class="btn btn-secondary">
-                    <input type="radio" name="rich" value="yes" id="option3"> Yes
+                    <input type="radio" name="rich" value="yes" id="option3" required> Yes
                 </label>
                 <label class="btn btn-secondary">
-                    <input type="radio" name="rich" value="no" id="option4"> No
+                    <input type="radio" name="rich" value="no" id="option4" required> No
                 </label>
             </div>
             <br>
@@ -122,9 +122,9 @@ startup
         <center>
             <button class="btn btn-success login-form" style="margin-bottom: 30px" type="submit">continue</button>
         </center><br>
-        <a class="btn btn-outline-warning" href="{{route('startupForm')}} ">head to startup Form</a>
-        <br>
-        <a class="btn btn-outline-warning" href="{{route('signupPage') }}">head to sign up</a>
+{{--        <a class="btn btn-outline-warning" href="{{route('startupForm')}} ">head to startup Form</a>--}}
+{{--        <br>--}}
+{{--        <a class="btn btn-outline-warning" href="{{route('signupPage') }}">head to sign up</a>--}}
     </div>
 </form>
 
