@@ -33,4 +33,6 @@ img.flag {
     font-size: 80px;
     user-select: none;
     border: 4px solid #eee;
+    padding-left: 15px;
+    padding-right: 15px;
 }

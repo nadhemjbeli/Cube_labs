@@ -16,6 +16,11 @@ class userController extends Controller
     {
         return view('user/dashboard', ['user' => Auth::user()]);
     }
+    public function getadminMail()
+    {
+        return view('emails/admin', ['user' => Auth::user()]);
+    }
+
     public function getHome()
     {
         return view('welcome');

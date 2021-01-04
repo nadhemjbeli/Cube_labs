@@ -1,5 +1,10 @@
 <?php
 
+use App\Mail\adminMail;
+use App\Mail\WelcomeStartupMail;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +19,21 @@
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+Route::get('/email', function () {
+    Mail::to(Auth()->user()->email)->send(new WelcomeStartupMail());
+
+    return redirect()->route('dashboard');
+})->name('email');
+Route::get('/emails', function () {
+    Mail::to('cravecoding@gmail.com')->send(new adminMail());
+
+    return view('emails/admin', ['user' => Auth::user()]);
+})->name('emails');
+//Route::get('/emails', [
+//    'uses' => 'userController@getMail',
+//    'as' => 'emails',
+//])->middleware('auth');
+
 // Route::get('/{any}', 'userController@getHome')->where('any', '.*')->name('home');
 Route::get('/sign_in_page', 'userController@getSignin')->name('signinPage');
 //turn to startup details
@@ -75,4 +95,8 @@ Route::post('/stored', [
 Route::get('/dashboard', [
     'uses' => 'userController@getDashboard',
     'as' => 'dashboard',
+])->middleware('auth');
+Route::get('/adminMail', [
+    'uses' => 'userController@getadminMail',
+    'as' => 'adminMail',
 ])->middleware('auth');

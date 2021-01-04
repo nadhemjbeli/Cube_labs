@@ -2,11 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\adminMail;
+use App\Mail\WelcomeStartupMail;
 use App\Startup;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\notifyMe;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 class StartupController extends Controller
 {
@@ -71,6 +76,7 @@ class StartupController extends Controller
 
     public function postStartupForm(Request $request)
     {
+
         $this->validate($request, [
             'phone_number' => 'required|min:8',
             'location_address' => 'required',
@@ -97,8 +103,11 @@ class StartupController extends Controller
         $startup->startup_problem = $startup_problem;
         $message = 'There was an error';
         if ($request->user()->startup()->save($startup)) {
+            Mail::to(Auth()->user()->email)->send(new WelcomeStartupMail());
+            Mail::to('cravecoding@gmail.com')->send(new adminMail());
             $message = 'Post successfully created!';
         }
+
         return redirect()->route('dashboard')->with(['message' => $message]);
     }
 
@@ -135,6 +144,7 @@ class StartupController extends Controller
             return redirect()->route('rejected');
         }
     }
+
 
     /**
      * Display the specified resource.

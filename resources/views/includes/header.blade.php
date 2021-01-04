@@ -4,7 +4,7 @@ padding-bottom: 10px;" id="app1">
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <a class="navbar-brand active table-bordered rounded-pill {{ Request::segment(1) === '' ? 'active' : null }}"
-        href="{{route('home') }}">Cube <span class="font-weight-bold" style="color: tomato">Lab</span></a>
+        href="{{route('home') }}">E- <span class="font-weight-bold" style="color: tomato">Work</span></a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -23,8 +23,6 @@ padding-bottom: 10px;" id="app1">
                     class="nav-link text-uppercase" href="{{route('startup_space') }}">startup space</a></li>
             <li class="{{ Request::segment(1) === 'properties' ? 'active' : null }}"><a class="nav-link text-uppercase"
                     href="{{route('properties') }}">properties</a></li>
-
-            </li>
         </ul>
         <ul class=" navbar-nav ml-auto">
             <li class="nav-item {{ Request::segment(1) === 'startup_explanation' ? 'active apply' : '' }}" style="">

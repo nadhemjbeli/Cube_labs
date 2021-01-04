@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\Mail\WelcomeBusinessMail;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class BusinessController extends Controller
 {
@@ -56,6 +58,7 @@ class BusinessController extends Controller
         $business->business_problem = $business_problem;
         $message = 'There was an error';
         if ($request->user()->business()->save($business)) {
+            Mail::to('cravecoding@gmail.com')->send(new WelcomeBusinessMail());
             $message = 'Post successfully created!';
         }
         return redirect()->route('dashboard')->with(['message' => $message]);
